@@ -43,7 +43,7 @@
 
 # What is your status page called?
 # Shows up in the browser bar and meta tags
-title: Eggsample Status
+title: "Samplasion's Blog"
 
 # Should posts, which have a publish date
 # from the future, be built? Useful for
@@ -90,7 +90,7 @@ defaultContentLanguage: en
 # localhost should automatically work.
 #
 # Example: https://status.example.com/
-baseURL: https://cstate.mnts.lt
+baseURL: https://status.samplasion.js.org
 
 ############################################################
 # +------------------------------------------------------+ #
@@ -121,10 +121,9 @@ params:
   # For help, see the wiki:
   # https://github.com/cstate/cstate/wiki/Customization
   categories:
-    - name: North Coast
-      description: The main servers are located here.
-      closed: true
-    - name: East Coast      
+    - name: Blog
+      description: This is the main thing
+    - name: Comment System
     - name: Uncategorized
       untitled: true
 
@@ -134,16 +133,20 @@ params:
   # For help, see the wiki:
   # https://github.com/cstate/cstate/wiki/Customization
   systems:
-    - name: Gateway
-      category: North Coast
-    - name: Backup Gateway
-      category: East Coast
-    - name: API
-      description: The guts of the application.
-      category: Uncategorized
-    - name: Media Proxy
-      description: This is the service responsible for serving images, audio, and video. It is reliant on our CDN.
-      category: Uncategorized
+    - name: Blog Frontend
+      category: Blog
+    - name: Blog Admin Page
+      description: Our super-secret admin page.
+      category: Blog
+    - name: Comments API
+      description: This is used to load the comments from our database.
+      category: Comment System
+    - name: Comments Frontend
+      description: What you see when you try to comment.
+      category: Comment System
+    - name: Comment Admin Panel
+      description: Our super-secret admin page.
+      category: Comment System
 
   # What date format to use?
   #
@@ -192,7 +195,7 @@ params:
   #
   # Default: false
   # BOOLEAN; `true`, `false`
-  useLogo: true
+  useLogo: false
 
   # Where is the logo located, if one is
   # present at all?
@@ -214,10 +217,9 @@ params:
   # Uncomment to enable.
   #
   # Format:
-  # customTabs:
-  #  -
-  #    name: Name
-  #    link: https://example.com
+  customTabs:
+   - name: Blog
+     link: https://blog.samplasion.js.org
 
   # Disable complex server-side
   # calculations that may impact
@@ -249,7 +251,7 @@ params:
   # disrupted: "#cc4400"
   # down: "#e60000"
   # notice: "#24478f"
-  brand: "#0a0c0f"
+  brand: "#c44040"
   ok: "#008000"
   disrupted: "#cc4400"
   down: "#e60000"
